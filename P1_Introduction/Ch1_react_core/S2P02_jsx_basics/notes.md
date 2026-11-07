@@ -82,5 +82,5 @@ const element2 = React.createElement(
 >
 > 通读 `React` 官方文档：
 >
-> - `JSX` 简介（[文档](https://zh-hans.legacy.reactjs.org/docs/introducing-jsx.html)）
-> - 元素渲染（[文档](https://zh-hans.legacy.reactjs.org/docs/rendering-elements.html)）
+> - `JSX` 简介（[文档](https://zh-hans.legacy.reactjs.org/docs/introducing-jsx.html)，全文已另存为 `doc1_JSX_intro.md`）
+> - 元素渲染（[文档](https://zh-hans.legacy.reactjs.org/docs/rendering-elements.html)，全文已另存为 `doc2_elem_rendering.md`）

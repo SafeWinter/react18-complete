@@ -34,7 +34,8 @@ React [不强制要求](https://zh-hans.legacy.reactjs.org/docs/react-without-js
 在下面的例子中，我们声明了一个名为 `name` 的变量，然后在 JSX 中使用它，并将它包裹在大括号中：
 
 ```react
-const name = 'Josh Perez';const element = <h1>Hello, {name}</h1>;
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
 ```
 
 在 JSX 语法中，你可以在大括号内放置任何有效的 [JavaScript 表达式](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)。例如，`2 + 2`，`user.firstName` 或 `formatName(user)` 都是有效的 JavaScript 表达式。
@@ -209,7 +210,8 @@ With that out of the way, let’s get started!
 In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
 
 ```react
-const name = 'Josh Perez';const element = <h1>Hello, {name}</h1>;
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
 ```
 
 You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
