@@ -6,21 +6,14 @@ class App extends React.Component {
     num: 1
   }
 
-// 1. via callback (not recommended)
-// clickHandler = () => {
-//   this.setState({num: this.state.num + 1},
-//     () => this.setState({num: this.state.num + 1},
-//       () => this.setState({num: this.state.num + 1})
-//     )
-//   );
-// }
+  clickHandler = () => {
+    this.setState(prevState => ({num: prevState.num + 1}))
+    this.setState(prevState => ({num: prevState.num + 1}), () => console.log('after:', this.state.num))
+    this.setState(prevState => ({num: prevState.num + 1}))
+    
+    console.log('before:', this.state.num);
+  }
 
-// 2. take a function as 1st arg
-clickHandler = () => {
-  Array.from({length: 3}, _ => this.setState(
-    prevState => ({num: prevState.num + 1})));
-}
-  
   render() {
     return (
       <>
