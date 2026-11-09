@@ -6,23 +6,25 @@ class App extends React.Component {
     num: 1
   }
 
-  constructor(props) {
-    super(props);
-    this.timer = setInterval(() => {
-      this.setState({ num: this.state.num + 1 },
-      () => {
-        console.log(this.state.num)
-        if(this.state.num >= 5) {
-          clearInterval(this.timer)
-        }
-      } // 这里拿到的是更新后的值
-    )}, 1000)
+  // 1. via new variable
+  clickHandler = () => {
+    const newNum = this.state.num + 1;
+    this.setState({ num: newNum });
+    console.log(this.state.num);
   }
+
+  // 2. via callback function
+  // clickHandler = () => {
+  //   this.setState(
+  //     { num: this.state.num + 1 }, 
+  //     () => console.log(this.state.num));
+  // }
   
   render() {
     return (
       <>
         <div>Current number: {this.state.num}</div>
+        <button onClick={this.clickHandler}>+1</button>
       </>
     )
   }
