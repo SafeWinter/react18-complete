@@ -9,12 +9,6 @@ class App extends React.Component {
     this.setState({
       num: this.state.num + 1
     })
-    this.setState({
-      num: this.state.num + 1
-    })
-    this.setState({
-      num: this.state.num + 1
-    })
     console.log(this.state.num);
   }
   
