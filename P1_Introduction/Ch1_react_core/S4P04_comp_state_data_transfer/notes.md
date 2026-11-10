@@ -553,13 +553,56 @@ render() {
 
 核心概念——
 
-- （必看）[4. 组件 & Props](https://zh-hans.legacy.reactjs.org/docs/components-and-props.html)
-- （必看）[5. State & 生命周期](https://zh-hans.legacy.reactjs.org/docs/state-and-lifecycle.html)
-- （必看）[10. 状态提升](https://zh-hans.legacy.reactjs.org/docs/lifting-state-up.html)
-- （自学）[7. 条件渲染](https://zh-hans.legacy.reactjs.org/docs/conditional-rendering.html)
-- （自学）[8. 列表 & Key](https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html)
+- （必看）[4. 组件 & Props](https://zh-hans.legacy.reactjs.org/docs/components-and-props.html)（或查看 `doc2_comp_and_props.md`）
+- （必看）[5. State & 生命周期](https://zh-hans.legacy.reactjs.org/docs/state-and-lifecycle.html)（或查看 `doc3_state_and_lifecycle.md`）
+- （必看）[10. 状态提升](https://zh-hans.legacy.reactjs.org/docs/lifting-state-up.html)（或查看 `doc4_lifting_state_up.md`）
+- （自学）[7. 条件渲染](https://zh-hans.legacy.reactjs.org/docs/conditional-rendering.html)（或查看 `doc5_conditional_rendering.md`）
+- （自学）[8. 列表 & Key](https://zh-hans.legacy.reactjs.org/docs/lists-and-keys.html)（或查看 `doc6_lists_and_keys.md`）
+
+> [!important]
+>
+> `useEffect` 存在竞态条件时的控制方法（`L9`、`L13`、`L16`）：
+>
+> ```react
+> import { useState, useEffect } from 'react';
+> import { fetchBio } from './api.js';
+> 
+> export default function Page() {
+>   const [person, setPerson] = useState('Alice');
+>   const [bio, setBio] = useState(null);
+> 
+>   useEffect(() => {
+>     let allow = true
+> 
+>     setBio(null);
+>     fetchBio(person).then(result => {
+>       allow && setBio(result);
+>     });
+> 
+>     return () => allow = false
+>   }, [person]);
+> 
+>   return (
+>     <>
+>       <select value={person} onChange={e => {
+>         setPerson(e.target.value);
+>       }}>
+>         <option value="Alice">Alice</option>
+>         <option value="Bob">Bob</option>
+>         <option value="Taylor">Taylor</option>
+>       </select>
+>       <hr />
+>       <p><i>{bio ?? '加载中……'}</i></p>
+>     </>
+>   );
+> }
+> ```
+>
+> 出处：[脱围机制：使用 Effect 进行同步-挑战4](https://zh-hans.react.dev/learn/synchronizing-with-effects#challenges)
 
 
+
+---
 
 汇率转换案例（本课未讲解）：
 
