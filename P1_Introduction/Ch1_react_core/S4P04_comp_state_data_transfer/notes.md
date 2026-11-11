@@ -614,7 +614,7 @@ render() {
 
 ![](../../../assets/4.11.png)
 
-第三步：利用状态提升的概念重构 `Calculator`（`d23ce04`）：
+第三步：利用状态提升的概念重构 `Calculator`（`301ddc1`）：
 
 ![](../../../assets/4.12.png)
 
