@@ -8,16 +8,11 @@ const scaleNames = {
 export default class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      temperature: "",
-    };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    this.setState({
-      temperature: e.target.value,
-    });
+    this.props.onTemperatureChange(e.target.value);
   }
 
   render() {
@@ -26,7 +21,7 @@ export default class TemperatureInput extends React.Component {
         <legend>Enter temperature in {scaleNames[this.props.scale]}:</legend>
         <input
           type="text"
-          value={this.state.temperature}
+          value={this.props.temperature}
           onChange={this.handleChange}
         />
       </fieldset>

@@ -602,6 +602,24 @@ render() {
 
 
 
+> [!note]
+>
+> 旧版文档【[状态提升](https://zh-hans.legacy.reactjs.org/docs/lifting-state-up.html)】的代码示例 `Calculator` 在本地实测的演进过程详见 `Ch1S4P04-state-lifting` 分支。
+
+第一步：`Calculator` + `BoilingVerdict`（`701ffbf`）：
+
+![](../../../assets/4.10.png)
+
+第二步：从 `Calculator` 组件抽离 `TemperatureInput` 组件后（`8404c41`）：
+
+![](../../../assets/4.11.png)
+
+第三步：利用状态提升的概念重构 `Calculator`（`d23ce04`）：
+
+![](../../../assets/4.12.png)
+
+
+
 ---
 
 汇率转换案例（本课未讲解）：
