@@ -634,6 +634,43 @@ render() {
 
 ![](../../../assets/4.14.png)
 
+
+
+> [!important]
+>
+> ### 关于多个 DOM 节点的列表渲染
+>
+> （出处：[描述 UI：渲染列表](https://zh-hans.react.dev/learn/rendering-lists)）
+>
+> 要让每个列表项都输出多个 `DOM` 节点而非一个，可以使用 `Fragment` 语法。
+>
+> 但由于其简写形式 `<> </>` 无法接受 `key` 值，所以只能——
+>
+> - 要么把生成的节点用一个 `<div>` 标签包裹起来；
+> - 要么使用长一点但更明确的 `<Fragment>` 写法：
+>
+> ```react
+> import { Fragment } from 'react';
+> // ...
+> const listItems = people.map(person =>
+>   <Fragment key={person.id}>
+>     <h1>{person.name}</h1>
+>     <p>{person.bio}</p>
+>   </Fragment>
+> );
+> ```
+>
+> 这里的 `Fragment` 标签本身并不会出现在 `DOM` 上，这串代码最终会转换成 `<h1>`、`<p>`、`<h1>`、`<p>`…… 的列表。
+>
+> 
+>
+> ### key 需要满足的条件 
+>
+> - **key 值在兄弟节点之间必须是唯一的。** 不过不要求全局唯一，在不同的数组中可以使用相同的 `key`。
+> - **key 值不能改变**，否则就失去了使用 `key` 的意义！所以千万不要在渲染时动态地生成 `key`。
+
+
+
 ---
 
 汇率转换案例（本课未讲解）：
