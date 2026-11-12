@@ -624,7 +624,15 @@ render() {
 
 ![](../../../assets/4.13.png)
 
+实测旧版文档 [条件渲染](https://zh-hans.legacy.reactjs.org/docs/conditional-rendering.html) 的示例代码详见 `code/diy/` 下的 `conditional-login-control` 和 `conditional-warning-banner` 文件夹：
 
+条件渲染登录按钮：
+
+![](../../../assets/4.15.png)
+
+条件渲染警告信息：
+
+![](../../../assets/4.14.png)
 
 ---
 
@@ -701,3 +709,6 @@ function Money(props) {
 export default Money;
 ```
 
+> [!warning]
+>
+> 根据 `React` 官方文档，上述汇率计算示例并不完全符合 `React` 最佳实践：与其在父组件的 `state` 中同时维护两种货币的数额，不如只维护其中一种的币种和币值（类似摄氏/华氏温度转换示例中的 `temperature` 和 `scale`），因为另一币种的币值可以完全由当前币种的币值与汇率算得。
