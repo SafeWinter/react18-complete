@@ -620,6 +620,12 @@ render() {
 
 
 
+实测新版官方文档 [状态提升](https://zh-hans.react.dev/learn/sharing-state-between-components) 的示例代码详见 `code/diy/panel/` 文件夹：
+
+![](../../../assets/4.13.png)
+
+
+
 ---
 
 汇率转换案例（本课未讲解）：
