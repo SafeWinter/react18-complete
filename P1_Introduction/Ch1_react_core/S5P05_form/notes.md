@@ -451,6 +451,26 @@ render() {
 
 ![](../../../assets/5.5.png)
 
+> [!note]
+>
+> **注意**
+>
+> 单选按钮与复选框在 `change` 事件中的最新的值是通过 `e.target.checked` 访问的，不是 `e.target.value`（`L2`）：
+>
+> ```react
+> handleChange(id, e) {
+>   console.log(e.target.value, e.target.checked);
+>   const courses = [...this.state.courses]
+>   const target = courses.find(e => e.id === id)
+>   target.checked = !target.checked
+>   this.setState({
+>     courses
+>   })
+> }
+> ```
+>
+> ![](../../../assets/5.14.png)
+
 
 
 ### 2.5 下拉列表 select
@@ -630,6 +650,34 @@ class App extends React.Component {
 export default App;
 ```
 
+实测（详见 `code/diy/uncontrolled1_basic/`）：
+
+```react
+constructor(props) {
+  super(props);
+  this.handleClick = this.handleClick.bind(this);
+  this.inputRef = React.createRef();
+}
+
+handleClick() {
+  console.log("Value to submit:", this.inputRef.current.value)
+}
+
+render() {
+  return (
+    <>
+      <h2>【示例8】非受控组件-基础文本框</h2>
+      <input type="text" ref={this.inputRef} defaultValue="abc" />
+      <button onClick={this.handleClick}>提交</button>
+    </>
+  );
+}
+```
+
+![](../../../assets/5.9.png)
+
+
+
 ### 3.2 非受控组件的默认值
 
 ```react
@@ -641,6 +689,40 @@ export default App;
 </div>
 ```
 
+根据 [高级指引：非受控组件](https://zh-hans.legacy.reactjs.org/docs/uncontrolled-components.html) 的说明，`<input type="checkbox">` 和 `<input type="radio">` 支持 `defaultChecked`；`<select>` 和 `<textarea>` 支持 `defaultValue`：
+
+|       控件        |    defaultValue    |   defaultChecked   |
+| :---------------: | :----------------: | :----------------: |
+|      文本框       | :heavy_check_mark: |        :x:         |
+|      文本域       | :heavy_check_mark: |        :x:         |
+| `select` 下拉列表 | :heavy_check_mark: |        :x:         |
+|     单选按钮      |        :x:         | :heavy_check_mark: |
+|      多选框       |        :x:         | :heavy_check_mark: |
+
+实测（详见 `code/diy/uncontrolled2_`）：
+
+```react
+render() {
+  return (
+    <>
+      <h2>【示例9】非受控组件- select 默认值</h2>
+      <select ref={this.selectRef} defaultValue="react">
+        {COURESE.map((item) => (
+          <option key={item.id} value={item.value}>
+            {item.label}
+          </option>
+        ))}
+      </select>
+      <button onClick={this.handleClick}>提交</button>
+    </>
+  );
+}
+```
+
+![](../../../assets/5.10.png)
+
+
+
 ### 3.3 文件上传
 
 ```react
@@ -648,7 +730,6 @@ import React from "react";
 
 // 类组件
 class App extends React.Component {
-
   constructor() {
     super();
     // 创建 ref 的时候，命名一般采用 xxxRef 结尾
@@ -660,7 +741,6 @@ class App extends React.Component {
     console.log(this.uploadRef.current.files);
   }
 
-
   render() {
     return (
       <div>
@@ -669,13 +749,38 @@ class App extends React.Component {
       </div>
     )
   }
-
 }
 
 export default App;
 ```
 
+实测（详见 `code/diy/uncontrolled3_file_upload/`）：
+
+```react
+constructor(props) {
+  super(props);
+  this.handleClick = this.handleClick.bind(this);
+  this.fileRef = React.createRef();
+}
+
+handleClick() {
+  console.log("Value to submit:", this.fileRef.current.files[0]);
+}
+
+render() {
+  return (
+    <>
+      <h2>【示例11】非受控组件-文件上传</h2>
+      <input type="file" ref={this.fileRef} />
+      <button onClick={this.handleClick}>提交</button>
+    </>
+  );
+}
+```
+
+![](../../../assets/5.11.png)
+
 这里的 `ref` 属性（`attribute`）相当于 `Vue` 中的 `ref`，`Vue` 可通过 `this.$refs.referencedName` 访问到具体的 `DOM` 元素。
 
-关于受控组件和非受控组件，可以参阅：*https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/*
+关于受控组件和非受控组件，可以参阅：https://goshacmd.com/controlled-vs-uncontrolled-inputs-react/（已转存至 `doc1_controlled_vs_uncontrolled_inputs.md`）
 
