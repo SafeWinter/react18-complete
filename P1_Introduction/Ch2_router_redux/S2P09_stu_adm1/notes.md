@@ -486,3 +486,33 @@ export default Home;
 > **注意**
 >
 > `useEffect` 的第二个参数要写为 `[]` 以免循环调用后端数据接口。
+
+
+
+## 3 DIY：带检索功能的学生列表
+
+利用 `useEffect` 的第二个参数实现动态检索姓名关键字：
+
+```jsx
+function Home() {
+  const [stuList, setStuList] = useState([]);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const fetchData = async (q) => {
+      const { data } = await getStuListApi();
+      const newList = (q && q.length > 0) 
+        ? data.filter(d => d.name.includes(q))
+        : data
+      setStuList(newList);
+    };
+    fetchData(query);
+  }, [query]);
+  
+  /* -- snip -- */
+}
+```
+
+实测效果（详见 `code/diy/stu-admin-with-router-home-table-dynamic/client/`）：
+
+![](../../../assets/9.9.png)
