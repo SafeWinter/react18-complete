@@ -1,0 +1,185 @@
+{
+  "students": [
+    {
+      "name": "xiejie",
+      "age": "18",
+      "phone": "333-444-555",
+      "email": "xiejie@gmail.com",
+      "education": "adsfasfd",
+      "graduationschool": "asdfasfd",
+      "profession": "asdfasdf",
+      "profile": "asdfasfdasdf",
+      "id": 1
+    },
+    {
+      "name": "张三",
+      "age": "20",
+      "phone": "138-0013-8000",
+      "email": "zhangsan@example.com",
+      "education": "本科",
+      "graduationschool": "北京大学",
+      "profession": "计算机科学与技术",
+      "profile": "热爱编程，擅长前端开发，有较强的学习能力。",
+      "id": 2
+    },
+    {
+      "name": "李四",
+      "age": "22",
+      "phone": "139-1234-5678",
+      "email": "lisi@example.com",
+      "education": "硕士",
+      "graduationschool": "清华大学",
+      "profession": "软件工程",
+      "profile": "专注于后端开发，熟悉Java和Python，有项目经验。",
+      "id": 3
+    },
+    {
+      "name": "王五",
+      "age": "19",
+      "phone": "137-8888-6666",
+      "email": "wangwu@example.com",
+      "education": "大专",
+      "graduationschool": "深圳职业技术学院",
+      "profession": "移动应用开发",
+      "profile": "熟悉Android开发，喜欢钻研新技术。",
+      "id": 4
+    },
+    {
+      "name": "赵六",
+      "age": "21",
+      "phone": "136-5555-4444",
+      "email": "zhaoliu@example.com",
+      "education": "本科",
+      "graduationschool": "浙江大学",
+      "profession": "人工智能",
+      "profile": "对机器学习有浓厚兴趣，参与过多个AI项目。",
+      "id": 5
+    },
+    {
+      "name": "孙七",
+      "age": "23",
+      "phone": "135-2222-1111",
+      "email": "sunqi@example.com",
+      "education": "硕士",
+      "graduationschool": "复旦大学",
+      "profession": "数据科学",
+      "profile": "擅长数据分析与可视化，熟悉SQL和Tableau。",
+      "id": 6
+    },
+    {
+      "name": "周八",
+      "age": "20",
+      "phone": "134-9999-0000",
+      "email": "zhouba@example.com",
+      "education": "本科",
+      "graduationschool": "上海交通大学",
+      "profession": "网络工程",
+      "profile": "熟悉网络协议与安全，有CCNA认证。",
+      "id": 7
+    },
+    {
+      "name": "吴九",
+      "age": "18",
+      "phone": "133-7777-8888",
+      "email": "wujiu@example.com",
+      "education": "高中",
+      "graduationschool": "北京市第四中学",
+      "profession": "前端开发",
+      "profile": "自学HTML/CSS/JavaScript，有个人博客。",
+      "id": 8
+    },
+    {
+      "name": "郑十",
+      "age": "24",
+      "phone": "132-6666-7777",
+      "email": "zhengshi@example.com",
+      "education": "博士",
+      "graduationschool": "中国科学技术大学",
+      "profession": "计算机视觉",
+      "profile": "研究方向为图像识别，发表过多篇论文。",
+      "id": 9
+    },
+    {
+      "name": "陈十一",
+      "age": "21",
+      "phone": "131-5555-6666",
+      "email": "chenshiyi@example.com",
+      "education": "本科",
+      "graduationschool": "南京大学",
+      "profession": "信息安全",
+      "profile": "对渗透测试感兴趣，参加过CTF比赛。",
+      "id": 10
+    },
+    {
+      "name": "1",
+      "age": "1",
+      "phone": "1",
+      "email": "1",
+      "education": "本科",
+      "graduationschool": "1",
+      "profession": "1",
+      "profile": "1",
+      "id": 11
+    },
+    {
+      "name": "2",
+      "age": "2",
+      "phone": "2",
+      "email": "2",
+      "education": "本科",
+      "graduationschool": "2",
+      "profession": "2",
+      "profile": "2",
+      "id": 12
+    },
+    {
+      "name": "3",
+      "age": "3",
+      "phone": "3",
+      "email": "3",
+      "education": "本科",
+      "graduationschool": "3",
+      "profession": "3",
+      "profile": "3",
+      "id": 13
+    },
+    {
+      "name": "4",
+      "age": "4",
+      "phone": "4",
+      "email": "4",
+      "education": "本科",
+      "graduationschool": "4",
+      "profession": "4",
+      "profile": "4",
+      "id": 14
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "name": "前端01班",
+      "description": "这是一个积极向上的班级"
+    },
+    {
+      "id": 2,
+      "name": "后端02班",
+      "description": "专注于Java与Python后端开发，注重实战项目。"
+    },
+    {
+      "id": 3,
+      "name": "人工智能03班",
+      "description": "涵盖机器学习、深度学习与计算机视觉，适合进阶学习者。"
+    },
+    {
+      "id": 4,
+      "name": "数据科学04班",
+      "description": "从数据采集到可视化分析，培养数据分析全流程能力。"
+    },
+    {
+      "id": 5,
+      "name": "网络安全05班",
+      "description": "讲解网络协议、渗透测试与安全防护，打造安全工程师。"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+.navbar-nav a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px;
+  color: #9d9d9d;
+
+  &.active {
+    color: #fff;
+    background-color: #080808;
+  }
+  &:hover {
+    color: #fff;
+    background-color: transparent;
+  }
+}
+
+.form-control {
+  margin-bottom: 1em;
+}
+
+tr,
+th {
+  text-align: center;
+}
+
+label {
+  width: 100%;
+}
+
+.glyphicon::before {
+  position: relative;
+  top: 2px;
+  margin-right: 10px;
+}
+
+.btn + .btn {
+  margin-left: 1em;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "stu-admin-server",
+  "version": "1.0.0",
+  "description": "Student info administration system designed for the demonstration of React Router & React Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": " ",
+    "start": "json-server --watch db.json --port 3001"
+  },
+  "keywords": [
+    "react",
+    "react-router",
+    "react-redux"
+  ],
+  "author": "PeacefulWinter",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}
